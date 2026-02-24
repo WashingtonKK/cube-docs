@@ -26,7 +26,7 @@ The cloud-init approach provisions a standard Ubuntu Noble (24.04) cloud image w
 ## Cloud-Init vs Buildroot
 
 | Aspect | Cloud-Init (Ubuntu) | Buildroot (HAL) |
-|---|---|---|
+| --- | --- | --- |
 | Base image | Ubuntu Noble cloud image | Custom minimal Linux |
 | Build time | Minutes (downloads pre-built image) | ~1 hour (compiles everything from source) |
 | Agent install | Built from source at first boot | Pre-compiled into the image |
@@ -168,7 +168,7 @@ sudo systemctl restart cube-agent.service
 Cloud-init generates self-signed certificates at first boot:
 
 | File | Description |
-|---|---|
+| --- | --- |
 | `/etc/cube/certs/ca.key` / `ca.crt` | CA private key and certificate |
 | `/etc/cube/certs/server.key` / `server.crt` | Server key and certificate (for Cube Agent) |
 | `/etc/cube/certs/client.key` / `client.crt` | Client key and certificate (for mTLS) |
@@ -182,7 +182,7 @@ For production deployments, replace these with certificates from a trusted CA or
 The default VM resources are defined at the top of `qemu.sh`:
 
 | Parameter | Default | Description |
-|---|---|---|
+| --- | --- | --- |
 | `DISK_SIZE` | `35G` | Disk size for the QCOW2 image |
 | `RAM` | `16384M` | VM memory allocation |
 | `CPU` | `8` | Number of vCPUs |
@@ -219,7 +219,7 @@ When TDX is enabled, the script:
 The VM exposes services via QEMU port forwarding:
 
 | Host Port | Guest Port | Service |
-|---|---|---|
+| --- | --- | --- |
 | `6190` | `22` | SSH |
 | `6191` | `80` | HTTP |
 | `6192` | `443` | HTTPS |
